@@ -1,37 +1,44 @@
 package org.example;
 
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
+
 /**
  * Hello world!
  *
  */
 public class TqsStack<T>
 {
-    private LinkedList<T> stack;
+    private final LinkedList<T> stack;
+    private int bound = -1;
 
     public TqsStack() {
-        this.stack = new LinkedList<>();;
+        this.stack = new LinkedList<>();
+    }
+    public TqsStack(int bound) {
+        this.stack = new LinkedList<>();
+        this.bound = bound;
     }
 
     public T pop(){
-        System.out.println("Poping");
-        return null;
+        if (this.stack.isEmpty())throw  new NoSuchElementException();
+        return this.stack.pop();
     }
     public void push(T x){
-        System.out.println("Pushing " + x);
+        if (bound > 0 && bound == this.stack.size()) throw new IllegalStateException();
+        this.stack.push(x);
     }
     public T peek(){
-        System.out.println("Peeking First");
-        return null;
+        if (this.stack.isEmpty()) throw new NoSuchElementException();
+        return this.stack.peek();
     }
 
     public int size(){
-        System.out.println("Sending Size");
-        return 50;
+        return this.stack.size();
     }
 
     public Boolean isEmpty(){
-        return false;
+        return this.stack.isEmpty();
     }
 
 

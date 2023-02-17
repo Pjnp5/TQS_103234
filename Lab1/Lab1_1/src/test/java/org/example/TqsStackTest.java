@@ -1,18 +1,23 @@
 package org.example;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TqsStackTest {
     private TqsStack<Integer> stack;
+    private TqsStack<Integer> bstack;
 
     @BeforeEach
     void setup(){
         this.stack = new TqsStack<>();
+        this.bstack = new TqsStack<>(1);
     }
 
     @AfterEach
@@ -68,6 +73,25 @@ public class TqsStackTest {
         stack.pop();
         stack.pop();
         assertEquals(0, stack.size(), "After 2 push and 2 pop the stack size should be 0.");
+    }
+
+    // g)
+    @Test
+    void PopNosuchElem(){
+        Assertions.assertThrows(NoSuchElementException.class, () -> stack.pop(), "A 'NoSuchElementException' should appear when pop is used on an empty stack ");
+    }
+
+    // h)
+    @Test
+    void PeekNoSuchElem(){
+        Assertions.assertThrows(NoSuchElementException.class, () -> stack.peek(), "A 'NoSuchElementException' should appear when peek is used on an empty stack ");
+    }
+
+    // i)
+    @Test
+    void BoundStack(){
+        bstack.push(1);
+        Assertions.assertThrows(IllegalStateException.class, () -> bstack.push(2), "A 'IllegalStateException' should appear when you push an element to a full stack");
     }
 
 }
