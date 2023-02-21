@@ -42,15 +42,14 @@ mvn test jacoco:report
 
 ###### Opening the `index.html` file in the Browser, present on the  directory `target/site/jacoco `  we can see the folowing results:
 
-![](/Users/paulopinto/Desktop/TQS_103234/Lab1/Lab1_2/Screenshot 2023-02-21 at 13.25.39.png)
+![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.25.39.png)
 
 ###### Clicking on `tqs.euromilions`:
-
-![](/Users/paulopinto/Desktop/TQS_103234/Lab1/Lab1_2/Screenshot 2023-02-21 at 13.50.03.png)
+https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.50.03.png)
 
 ###### Cliking on `tqs.sets`:
 
-![](/Users/paulopinto/Desktop/TQS_103234/Lab1/Lab1_2/Screenshot 2023-02-21 at 13.53.18.png)
+![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.53.18.png)
 
 ###  Which classes/methods offer less coverage? Are all possible decision branches being covered?
 
@@ -94,8 +93,8 @@ Added this test to check if the `intesects()` method was implemented as suposed,
 
 ## After changes
 
-![Screenshot 2023-02-21 at 18.01.48](/Users/paulopinto/Desktop/TQS_103234/Lab1/Lab1_2/Screenshot 2023-02-21 at 18.01.48.png)
+![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2018.01.48.png)
 
 After making changes to the tests and the class I was able to raise the coverage from 54% to 89%, only the `@overwrite` methods were not changed or got tests, if I added tests to them coverage probably would go up to 100%.
 
-![Screenshot 2023-02-21 at 18.08.38](/Users/paulopinto/Desktop/TQS_103234/Lab1/Lab1_2/Screenshot 2023-02-21 at 18.08.38.png)
+![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2018.08.38.png)
