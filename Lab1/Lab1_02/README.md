@@ -89,7 +89,7 @@ Added this test to see if the array was empty or not when created.
 
 ### testIntersection()
 
-Added this test to check if the `intesects()` method was implemented as suposed, it is able to see if a set contains another set, if one of the elements of the second set is not on the first it should return false, if every all elements exists returns true.
+Added this test to check if the `intersects()` method was implemented as suposed, it is able to see if a set contains another set, if one of the elements of the second set is not on the first it should return false, if every all elements exists returns true.
 
 ## After changes
 
