@@ -45,7 +45,7 @@ mvn test jacoco:report
 ![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.25.39.png)
 
 ###### Clicking on `tqs.euromilions`:
-https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.50.03.png)
+![](https://github.com/Pjnp5/TQS_103234/blob/main/Lab1/Lab1_02/Screenshot%202023-02-21%20at%2013.50.03.png)
 
 ###### Cliking on `tqs.sets`:
 
