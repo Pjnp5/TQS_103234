@@ -8,6 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,6 +34,8 @@ public class StocksPortfolioTest {
         portfolio.addStock(new Stock("MSFT",4));
         double res = portfolio.getTotalValue();
 
+        // 5. Verify the result (assert) and the use of the mock (verify)
+        assertEquals(14.0, res);
         // 5. Verify the result (assert) and the use of the mock (verify), using hamcrest
         assertThat(res, is(14.0));
 
