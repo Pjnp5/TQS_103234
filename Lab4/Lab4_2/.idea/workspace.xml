@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e04bd654-167e-44f3-9a51-af9b2a72b4c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab4_3/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab4_3/src/test/java/org/example/Tests/Lab4_4DockerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4_3/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4_3/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4_3/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4_3/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4_3/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4_3/src/test/java/org/example/Tests/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678974439359</updated>
       <workItem from="1678974440548" duration="2300000" />
-      <workItem from="1678977796895" duration="3042000" />
+      <workItem from="1678977796895" duration="3447000" />
+      <workItem from="1678990378614" duration="406000" />
     </task>
     <servers />
   </component>
