@@ -15,8 +15,6 @@ import org.openqa.selenium.WebElement;
 @ExtendWith(SeleniumJupiter.class)
 class AppTest {
   private final WebDriver driver;
-  private static final String BLAZE_URL = "https://blazedemo.com/";
-
   public AppTest(FirefoxDriver driver){
     this.driver = driver;
   }
