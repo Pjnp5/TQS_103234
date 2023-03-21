@@ -66,8 +66,8 @@ public class BlazeDemoSearchSteps {
         // 19 | type | id=zipCode | 9192
         driver.findElement(By.id("zipCode")).sendKeys(ZipCode);
     }
-    @And("I enter my card data, {string}, {string}, {string}, {string}")
-    public void CardData(String CardName, String Month, String Year, String NameOnCard){
+    @And("I enter my card data, {string}, {string}, {string}, {string}, {string}")
+    public void CardData(String CardName, String CardNumber,String Month, String Year, String NameOnCard){
         // 20 | select | id=cardType | label=American Express
         {
             WebElement dropdown = driver.findElement(By.id("cardType"));
@@ -78,7 +78,7 @@ public class BlazeDemoSearchSteps {
         // 22 | click | id=creditCardNumber |
         driver.findElement(By.id("creditCardNumber")).click();
         // 23 | type | id=creditCardNumber | 9182
-        driver.findElement(By.id("creditCardNumber")).sendKeys(CardName);
+        driver.findElement(By.id("creditCardNumber")).sendKeys(CardNumber);
         // 24 | click | id=creditCardMonth |
         driver.findElement(By.id("creditCardMonth")).click();
         // 25 | type | id=creditCardMonth | 12
