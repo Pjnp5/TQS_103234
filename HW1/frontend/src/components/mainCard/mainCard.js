@@ -1,6 +1,8 @@
 import { Card, Row } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import LatLonSearch from "../Cards/LatLonSearch/LatLonSearch";
 import NameSearch from "../Cards/NameSearch/NameSearch";
+import axios from "axios";
 
 const tabList = [
   {
@@ -15,15 +17,37 @@ const tabList = [
 
 const contentList = {
   name: <NameSearch />,
-  latlon: <p>content2</p>,
+  latlon: <LatLonSearch />,
 };
+
 const MainCard = () => {
   const [activeTabKey1, setActiveTabKey1] = useState("name");
-
   const onTabChange = (key) => {
     setActiveTabKey1(key);
   };
 
+  const [dataSource, setDataSource] = useState({});
+
+  const getCacheData = () => {
+    axios
+      .get("http://localhost:8080/cacheDetails")
+      .then((res) => {
+        return res;
+      })
+      .then((res) => {
+        setDataSource(res.data);
+      });
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(getCacheData, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  getCacheData()
   return (
     <>
       {/* Colocar o Card que vai conter o tudo centrado vetical e horizontalmente */}
@@ -37,9 +61,20 @@ const MainCard = () => {
         <Card
           title="Search Method"
           style={{ backgroundColor: "#FAFAFA" }}
+          tabProps={{ centered: true }}
           tabList={tabList}
           activeTabKey={activeTabKey1}
           onTabChange={onTabChange}
+          bodyStyle={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          actions={[
+            "Requests: " + dataSource.requests,
+            "Hits: " + dataSource.hits,
+            "Misses: " + dataSource.misses,
+          ]}
         >
           {contentList[activeTabKey1]}
         </Card>

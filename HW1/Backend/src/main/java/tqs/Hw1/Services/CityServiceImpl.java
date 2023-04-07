@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,8 @@ public class CityServiceImpl implements CityService{
     @Autowired
     private HTTPClient httpClient = new HTTPClient();
 
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
     // method to retrieve city by name
     @Override
     public City getCityByName(String name) throws IOException {
@@ -32,12 +35,7 @@ public class CityServiceImpl implements CityService{
             city = consumeFromAPIbyName( name );
             if(city != null){
                 // if data is available from API, increment the hit count and add data to cache
-                cityCache.incrementHitCount();
                 cityCache.put(name.toLowerCase(), city);}
-            else {
-                // if data is not available from API, increment the miss count
-                cityCache.incrementMissCount();
-            }
         }
         return city;
     }
@@ -145,7 +143,7 @@ public class CityServiceImpl implements CityService{
         Double pm10 = locationObj_inside.getDouble("pm10");
 
 
-        return new City(name, country, lat, lon, co, no2, o3, so2, pm2_5, pm10);
+        return new City(name, country, lat, lon, Double.valueOf(df.format(co)) , Double.valueOf(df.format(no2)) ,Double.valueOf(df.format(o3)), Double.valueOf(df.format(so2)), Double.valueOf(df.format(pm2_5)), Double.valueOf(df.format(pm10)));
     }
     // method to extract city data from the JSON response of the other API
 
@@ -165,6 +163,6 @@ public class CityServiceImpl implements CityService{
         locationObj = jsonObj.getJSONObject("PM10");
         Double pm10 = locationObj.getDouble(concentration);
 
-        return new City(name, country, lat, lon, co, no2, o3, so2, pm2_5, pm10);
+        return new City(name, country, lat, lon, Double.valueOf(df.format(co)) , Double.valueOf(df.format(no2)) ,Double.valueOf(df.format(o3)), Double.valueOf(df.format(so2)), Double.valueOf(df.format(pm2_5)), Double.valueOf(df.format(pm10)));
     }
 }

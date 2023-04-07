@@ -36,6 +36,7 @@ public class TTLCache {
             // check if item has timed out
             if (System.currentTimeMillis() / 1000 >= cacheMap.get(key).getLastAcess() + TTL) {
                 deleteNode(cacheMap.get(key)); // delete timed out item
+                incrementMissCount();
                 return null; // return null if item has timed out
             } else {
                 // item is still within TTL, so return it and increment the hit count

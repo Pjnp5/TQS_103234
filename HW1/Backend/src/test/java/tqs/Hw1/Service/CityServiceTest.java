@@ -71,7 +71,6 @@ class CityServiceTest {
         assertEquals(dummyCity.getName(), actualCity.getName());
         verify(cityCache, times(1)).get(cityName.toLowerCase());
         verify(cityCache, times(1)).put(cityName.toLowerCase(), actualCity); // using actual city, cause dummy city will have diferent values on air quality
-        verify(cityCache, times(1)).incrementHitCount();
     }
 
     // In the lat and lon search I havent implemented the cache, so i only check if the API works fine
@@ -135,7 +134,6 @@ class CityServiceTest {
         assertEquals(dummyCity2.getName(), actualCity.getName());
         verify(cityCache, times(1)).get(cityName.toLowerCase());
         verify(cityCache, times(1)).put(cityName.toLowerCase(), actualCity); // using actual city, cause dummy city will have diferent values on air quality
-        verify(cityCache, times(1)).incrementHitCount();
     }
 
     @Test
