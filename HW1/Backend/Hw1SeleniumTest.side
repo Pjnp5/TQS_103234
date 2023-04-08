@@ -1,0 +1,75 @@
+{
+  "id": "f617ea1f-7ed7-45f6-b9b5-2cb3e14343e5",
+  "version": "2.0",
+  "name": "Hw1",
+  "url": "http://127.0.0.1:3000",
+  "tests": [{
+    "id": "55a5f608-1150-42b1-85af-9a9e00f1a967",
+    "name": "Untitled",
+    "commands": [{
+      "id": "21a69439-daa0-4a80-87c4-eb69dd5e47ce",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "350d2395-5c48-408e-83c4-41b0194dea7d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "281a6ba7-77da-4ed7-8070-fa0433bcd5f0",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/div/form/div/div/div/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce222b37-2f02-4f47-bdb0-ddef3bb5937f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/div/form/div/div/div/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Aveiro"
+    }, {
+      "id": "10875232-1f54-4220-bcc3-65808b222ec0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn-primary > span",
+      "targets": [
+        ["css=.ant-btn-primary > span", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/div/form/div/div[2]/div/div/div/div/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a162d5ff-ced0-4881-9684-ef87fa8c8570",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["55a5f608-1150-42b1-85af-9a9e00f1a967"]
+  }],
+  "urls": ["http://127.0.0.1:3000/"],
+  "plugins": []
+}
