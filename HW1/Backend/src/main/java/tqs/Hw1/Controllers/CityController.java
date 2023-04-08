@@ -13,7 +13,7 @@ import java.net.URISyntaxException;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins={"http://localhost:3000", "http://127.0.0.1:3000"})
 public class CityController {
     @Autowired
     CityService cityService;

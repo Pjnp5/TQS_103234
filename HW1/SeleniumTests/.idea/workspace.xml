@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be163ca7-f9c7-4f2d-8a0a-fbde9a55695f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../SeleniumTests/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/src/main/java/tqs/Hw1/Controllers/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/main/java/tqs/Hw1/Controllers/CityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/mainCard/mainCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/mainCard/mainCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/Lab4_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/Lab4_2/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680972923091</updated>
       <workItem from="1680972924488" duration="333000" />
-      <workItem from="1680973327225" duration="6785000" />
+      <workItem from="1680973327225" duration="7170000" />
     </task>
     <servers />
   </component>

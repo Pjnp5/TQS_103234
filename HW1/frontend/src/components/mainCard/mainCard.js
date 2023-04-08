@@ -11,7 +11,7 @@ const tabList = [
   },
   {
     key: "latlon",
-    tab: "Latitude & Longitude",
+    tab: "Lat & Long",
   },
 ];
 
@@ -47,7 +47,7 @@ const MainCard = () => {
     };
   }, []);
 
-  getCacheData()
+  getCacheData();
   return (
     <>
       {/* Colocar o Card que vai conter o tudo centrado vetical e horizontalmente */}
@@ -59,8 +59,8 @@ const MainCard = () => {
       >
         {/* Card com o resto dentro */}
         <Card
-          title="Search Method"
-          style={{ backgroundColor: "#FAFAFA" }}
+          title={"Search Method"}
+          style={{ backgroundColor: "#FAFAFA", textAlign: "center" }}
           tabProps={{ centered: true }}
           tabList={tabList}
           activeTabKey={activeTabKey1}
