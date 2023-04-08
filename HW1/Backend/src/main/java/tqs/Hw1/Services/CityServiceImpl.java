@@ -34,7 +34,7 @@ public class CityServiceImpl implements CityService{
             // if the city is not present in the cache, consume from API and add to cache
             city = consumeFromAPIbyName( name );
             if(city != null){
-                // if data is available from API, increment the hit count and add data to cache
+                // if data is available from API, add data to cache
                 cityCache.put(name.toLowerCase(), city);}
         }
         return city;
@@ -43,7 +43,24 @@ public class CityServiceImpl implements CityService{
     // method to retrieve city by latitude and longitude, it has no connection with cache
     @Override
     public City getCityByLatAndLon(Double lat, Double lon) throws IOException {
-        return consumeFromAPIbyLatAndLon(lat.toString(), lon.toString());
+        String response = httpClient.makeRequestByLAtAndLon_extra(lat.toString(), lon.toString());
+        JSONObject jsonObj = new JSONObject(response);
+
+
+        String name = jsonObj.getString("city");
+        Double lati = jsonObj.getDouble("latitude");
+        Double longi = jsonObj.getDouble("longitude");
+        String country = jsonObj.getString("countryName");
+
+        City city = cityCache.get(name.toLowerCase());
+        if (city == null) {
+            // if the city is not present in the cache, consume from API and add to cache
+            city = consumeFromAPIbyLatAndLon(lat.toString(), lon.toString(), name,  lati, longi, country );
+            if(city != null){
+                // if data is available from API, add data to cache
+                cityCache.put(name.toLowerCase(), city);}
+        }
+        return city;
     }
 
     // method to retrieve cache details
@@ -88,7 +105,7 @@ public class CityServiceImpl implements CityService{
     }
 
     // method to consume API and retrieve city data by latitude and longityude
-    public City consumeFromAPIbyLatAndLon(String lat, String lon) throws IOException {
+    public City consumeFromAPIbyLatAndLon(String lat, String lon, String name, Double lati, Double longi, String country) throws IOException {
         // Create a Logger
         Logger logger
                 = Logger.getLogger(
@@ -104,14 +121,6 @@ public class CityServiceImpl implements CityService{
         }catch (JSONException e){
             // trying to get info from the second API, since the first did not work out
             try{
-                response = httpClient.makeRequestByLAtAndLon_extra(lat, lon);
-                JSONObject jsonObj2 = new JSONObject(response);
-
-                String name = jsonObj2.getString("city");
-                Double lati = jsonObj2.getDouble("latitude");
-                Double longi = jsonObj2.getDouble("longitude");
-                String country = jsonObj2.getString("countryName");
-
                 return getInfo2(jsonObj, name, lati, longi, country);
             }
             catch (JSONException ex) {
