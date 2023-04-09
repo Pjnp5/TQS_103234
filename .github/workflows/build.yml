@@ -23,22 +23,51 @@ jobs:
       - name: Step 1 - Checkout main branch from Github
         uses: actions/checkout@v2
 
-      - name: Step 2 - Set up JDK 1.8
+      - name: Step 2 - Set up JDK 17
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
-          
-      - name: Step 3 - Enter the project folder
-        run: |
-          cd Hw1
+          java-version: 17
 
       - name: Step 3 - Have Github Actions build Maven project
-        run: mvn -B package --file Backend/pom.xml
+        run: |
+          ls -la
+          mvn -B package --file HW1/Backend/pom.xml
         
       - name: Step 4 - List the current directory
         run: ls -la
         
       - name: Step 5 - Show files inside the target/ folder
         run: |
-          cd Backend/target
+          cd HW1/Backend/target
           ls -la
+  sonar:
+      name: SonarCloud Code Inspection
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        - name: Set up JDK 17
+          uses: actions/setup-java@v1
+          with:
+            java-version: 17
+        - name: Cache SonarCloud packages
+          uses: actions/cache@v1
+          with:
+            path: ~/.sonar/cache
+            key: ${{ runner.os }}-sonar
+            restore-keys: ${{ runner.os }}-sonar
+        - name: Cache Maven packages
+          uses: actions/cache@v1
+          with:
+            path: ~/.m2
+            key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+            restore-keys: ${{ runner.os }}-m2
+        - name: Build and analyze
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
+          run: |
+              cd HW1/Backend
+              mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
