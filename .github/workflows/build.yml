@@ -31,7 +31,7 @@ jobs:
       - name: Step 3 - Enter the project folder
         run: |
           ls -la
-          cd Hw1
+          cd HW1
 
       - name: Step 3 - Have Github Actions build Maven project
         run: mvn -B package --file Backend/pom.xml
