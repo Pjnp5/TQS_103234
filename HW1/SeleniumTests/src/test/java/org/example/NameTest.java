@@ -1,4 +1,4 @@
-package org.example.Selenium;
+package org.example;
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
 import org.junit.jupiter.api.*;

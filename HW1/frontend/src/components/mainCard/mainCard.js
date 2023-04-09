@@ -40,7 +40,7 @@ const MainCard = () => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(getCacheData, 1000);
+    const intervalId = setInterval(getCacheData, 100);
 
     return () => {
       clearInterval(intervalId);
