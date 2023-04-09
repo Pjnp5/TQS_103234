@@ -22,4 +22,4 @@ jobs:
           project-key: '<PROJECT_KEY>'
           project-name: '<PROJECT_NAME>'
           project-version: '1.0'
-          sources: 'Hw1/backend/src'
+          sources: 'Hw1/Backend/src'
