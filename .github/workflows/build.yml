@@ -30,7 +30,6 @@ jobs:
           
       - name: Step 3 - Enter the project folder
         run: |
-          ls -la
           cd HW1
 
       - name: Step 3 - Have Github Actions build Maven project
