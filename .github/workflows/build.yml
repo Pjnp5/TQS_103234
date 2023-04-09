@@ -27,20 +27,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-          
-      - name: Step 3 - Enter the project folder
-        run: |
-          cd HW1
 
       - name: Step 3 - Have Github Actions build Maven project
         run: |
           ls -la
-          mvn -B package --file Backend/pom.xml
+          mvn -B package --file HW1/Backend/pom.xml
         
       - name: Step 4 - List the current directory
         run: ls -la
         
       - name: Step 5 - Show files inside the target/ folder
         run: |
-          cd Backend/target
+          cd HW1/Backend/target
           ls -la
