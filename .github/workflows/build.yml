@@ -34,7 +34,9 @@ jobs:
           cd HW1
 
       - name: Step 3 - Have Github Actions build Maven project
-        run: mvn -B package --file Backend/pom.xml
+        run: |
+          ls -la
+          mvn -B package --file Backend/pom.xml
         
       - name: Step 4 - List the current directory
         run: ls -la
