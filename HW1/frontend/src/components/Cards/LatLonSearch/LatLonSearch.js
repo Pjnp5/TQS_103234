@@ -71,12 +71,13 @@ const LatLonSearch = () => {
   // Função de tratamento dos dados do forms submetido
   const onFinish = (values) => {
     console.log(values);
+    const params = new URLSearchParams()
+    params.append("lat", parseFloat(values.Latitude))
+    params.append("lon", parseFloat(values.Longitude))
+
     axios
       .get(
-        "http://localhost:8080/city/" +
-          parseFloat(values.Latitude) +
-          "/" +
-          parseFloat(values.Longitude)
+        `http://localhost:8080/coords?${params}`
       )
       .then((res) => {
         return res;

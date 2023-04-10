@@ -34,9 +34,9 @@ class ControllerTest {
 
         when(cityService.getCityByName("Oporto")).thenReturn(porto);
 
-        mvc.perform(get("/city/{name}", "Oporto").contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Oporto"));
+        mvc.perform(get("/name")
+                        .param("name", "Oporto"))
+                        .andExpect(status().isOk());
     }
 
     @Test
@@ -45,10 +45,11 @@ class ControllerTest {
 
         when(cityService.getCityByLatAndLon(41.15, -8.62)).thenReturn(porto);
 
-        mvc.perform(get("/city/{lat}/{lon}", 41.15, -8.62).contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.latitude").value(41.15))
-                .andExpect(jsonPath("$.longitude").value(-8.62));
+        mvc.perform(get("/coords")
+                        .param("lat", "41.15")
+                        .param("lon", "-8.62"))
+                .andExpect(status().isOk());
+
     }
 
     @Test

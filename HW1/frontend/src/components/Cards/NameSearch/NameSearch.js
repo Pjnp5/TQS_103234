@@ -70,8 +70,10 @@ const NameSearch = () => {
 
   // Função de tratamento dos dados do forms submetido
   const onFinish = (values) => {
+    const params = new URLSearchParams();
+    params.append("name", values.Name.replace(/ /g, ""));
     axios
-      .get("http://localhost:8080/city/" + values.Name.replace(/ /g, ""))
+      .get(`http://localhost:8080/name?${params}`)
       .then((res) => {
         return res;
       })
