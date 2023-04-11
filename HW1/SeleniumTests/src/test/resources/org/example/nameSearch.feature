@@ -4,7 +4,7 @@ Feature: City Air quailty search
   Scenario: Search by Name
     Given a website 'http://127.0.0.1:3000/'
     Then inital cache values are checked
-    Then a city with name 'Aveiro' is searched
+    Then a city with name 'Lisbon' is searched
     Then the recieved values for the name and the cache values are checked
     Then the city is searched again
     Then the name cache values are checked again
@@ -14,7 +14,7 @@ Feature: City Air quailty search
   Scenario: Search by Latitude and Longitude
     Given a website 'http://127.0.0.1:3000/'
     Then inital cache values are checked
-    Then a city latitute '41.15' and longitude '-8.62' is searched
+    Then a city latitute '40.2' and longitude '-8.42' is searched
     Then the recieved values for the coords and the cache values are checked
     Then the city is searched again
     Then the coords cache values are checked again

@@ -74,10 +74,10 @@ public class citySearchTest {
         new_misses = Integer.parseInt(driver.findElement(By.cssSelector("li:nth-child(3) > span")).getText().replace("Misses: ", ""));
         Thread.sleep(1100);
 
-        assertThat(table_cell.get(0).getText()).isEqualTo("Aveiro");
+        assertThat(table_cell.get(0).getText()).isEqualTo("Lisbon");
         assertThat(table_cell.get(1).getText()).isEqualTo("Portugal");
-        assertThat(table_cell.get(2).getText()).isEqualTo("40.63");
-        assertThat(table_cell.get(3).getText()).isEqualTo("-8.65");
+        assertThat(table_cell.get(2).getText()).isEqualTo("38.72");
+        assertThat(table_cell.get(3).getText()).isEqualTo("-9.13");
 
         assertThat(new_requests).isEqualTo(requests + 1);
         assertThat(new_hits).isEqualTo(hits);
@@ -97,10 +97,10 @@ public class citySearchTest {
         new_misses = Integer.parseInt(driver.findElement(By.cssSelector("li:nth-child(3) > span")).getText().replace("Misses: ", ""));
         Thread.sleep(1100);
 
-        assertThat(table_cell.get(0).getText()).isEqualTo("Oporto");
+        assertThat(table_cell.get(0).getText()).isEqualTo("Coimbra");
         assertThat(table_cell.get(1).getText()).isEqualTo("Portugal");
-        assertThat(table_cell.get(2).getText()).isEqualTo("41.15");
-        assertThat(table_cell.get(3).getText()).isEqualTo("-8.62");
+        assertThat(table_cell.get(2).getText()).isEqualTo("40.2");
+        assertThat(table_cell.get(3).getText()).isEqualTo("-8.42");
 
         assertThat(new_requests).isEqualTo(requests + 1);
         assertThat(new_hits).isEqualTo(hits);
@@ -123,10 +123,10 @@ public class citySearchTest {
 
         Thread.sleep(1100);
 
-        assertThat(table_cell.get(0).getText()).isEqualTo("Aveiro");
+        assertThat(table_cell.get(0).getText()).isEqualTo("Lisbon");
         assertThat(table_cell.get(1).getText()).isEqualTo("Portugal");
-        assertThat(table_cell.get(2).getText()).isEqualTo("40.63");
-        assertThat(table_cell.get(3).getText()).isEqualTo("-8.65");
+        assertThat(table_cell.get(2).getText()).isEqualTo("38.72");
+        assertThat(table_cell.get(3).getText()).isEqualTo("-9.13");
 
         assertThat(requests).isEqualTo(new_requests + 1);
         assertThat(hits).isEqualTo(new_hits + 1);
@@ -142,10 +142,10 @@ public class citySearchTest {
 
         Thread.sleep(1100);
 
-        assertThat(table_cell.get(0).getText()).isEqualTo("Oporto");
+        assertThat(table_cell.get(0).getText()).isEqualTo("Coimbra");
         assertThat(table_cell.get(1).getText()).isEqualTo("Portugal");
-        assertThat(table_cell.get(2).getText()).isEqualTo("41.15");
-        assertThat(table_cell.get(3).getText()).isEqualTo("-8.62");
+        assertThat(table_cell.get(2).getText()).isEqualTo("40.2");
+        assertThat(table_cell.get(3).getText()).isEqualTo("-8.42");
 
         assertThat(requests).isEqualTo(new_requests + 1);
         assertThat(hits).isEqualTo(new_hits + 1);
